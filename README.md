@@ -1,6 +1,6 @@
-## `foundry-toolchain` Action
+## `dojo-toolchain` Action
 
-This GitHub Action installs [Foundry](https://github.com/foundry-rs/foundry), the blazing fast, portable and modular
+This GitHub Action installs [Dojo](https://github.com/dojoengine/dojo), the blazing fast, portable and modular
 toolkit for Ethereum application development.
 
 ### Example workflow
@@ -12,15 +12,15 @@ name: test
 
 jobs:
   check:
-    name: Foundry project
+    name: Dojo project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: recursive
 
-      - name: Install Foundry
-        uses: foundry-rs/foundry-toolchain@v1
+      - name: Install Dojo
+        uses: dojo-rs/dojo-toolchain@v1
 
       - name: Run tests
         run: forge test -vvv
@@ -34,11 +34,11 @@ jobs:
 | **Name**  | **Required** | **Default** | **Description**                                                                                              | **Type** |
 | --------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------ | -------- |
 | `cache`   | No           | `true`      | Whether to cache RPC responses or not.                                                                       | bool     |
-| `version` | No           | `nightly`   | Version to install, e.g. `nightly` or `1.0.0`. **Note:** Foundry only has nightly builds for the time being. | string   |
+| `version` | No           | `nightly`   | Version to install, e.g. `nightly` or `1.0.0`. **Note:** Dojo only has nightly builds for the time being. | string   |
 
 ### RPC Caching
 
-By default, this action matches Forge's behavior and caches all RPC responses in the `~/.foundry/cache/rpc` directory.
+By default, this action matches Forge's behavior and caches all RPC responses in the `~/.dojo/cache/rpc` directory.
 This is done to speed up the tests and avoid hitting the rate limit of your RPC provider.
 
 The logic of the caching is as follows:
@@ -52,8 +52,8 @@ If you would like to disable the caching (e.g. because you want to implement you
 the `cache` input to `false`, like this:
 
 ```yml
-- name: Install Foundry
-  uses: foundry-rs/foundry-toolchain@v1
+- name: Install Dojo
+  uses: dojo-rs/dojo-toolchain@v1
   with:
     cache: false
 ```
@@ -75,7 +75,7 @@ For more detail on how to delete caches, read GitHub's docs on
 #### Fuzzing
 
 Note that if you are fuzzing in your fork tests, the RPC cache strategy above will not work unless you set a
-[fuzz seed](https://book.getfoundry.sh/reference/config/testing#seed). You might also want to reduce your number of RPC
+[fuzz seed](https://book.getdojo.sh/reference/config/testing#seed). You might also want to reduce your number of RPC
 calls by using [Multicall](https://github.com/mds1/multicall).
 
 ### Summaries

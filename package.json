@@ -1,17 +1,16 @@
 {
-  "name": "@foundry-rs/foundry-toolchain",
+  "name": "@dojoengine/dojo-toolchain",
   "version": "1.0.8",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/index.js",
   "keywords": [
-    "foundry",
+    "dojo",
     "ethereum",
-    "solidity",
-    "evm",
-    "forge",
-    "cast",
-    "dapp",
-    "dapptools"
+    "cairo",
+    "starknet",
+    "sozo",
+    "torii",
+    "katana"
   ],
   "scripts": {
     "build": "ncc build src/index.js -o dist --source-map && ncc build src/save.js -o dist/save --source-map"

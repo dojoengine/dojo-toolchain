@@ -12,7 +12,7 @@ async function main() {
 
     // Download the archive containing the binaries
     const download = getDownloadObject(version);
-    console.log(`Downloading Foundry '${version}' from: ${download.url}`);
+    console.log(`Downloading Dojo '${version}' from: ${download.url}`);
     const pathToArchive = await toolCache.downloadTool(download.url);
 
     // Extract the archive onto host runner

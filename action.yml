@@ -1,6 +1,6 @@
-name: "foundry-toolchain"
-description: "Install Foundry"
-author: "Foundry"
+name: "dojo-toolchain"
+description: "Install Dojo"
+author: "Dojo"
 branding:
   color: "gray-dark"
   icon: "play-circle"
@@ -16,9 +16,9 @@ inputs:
   version:
     default: "nightly"
     description: |
-      Foundry version.
+      Dojo version.
 
-      This version number has to match a released version of Foundry.
+      This version number has to match a released version of Dojo.
       The default value is `nightly`, which will pull the latest nightly build.
     required: false
 
