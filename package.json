@@ -13,7 +13,7 @@
     "katana"
   ],
   "scripts": {
-    "build": "ncc build src/index.js -o dist --source-map && ncc build src/save.js -o dist/save --source-map"
+    "build": "ncc build src/index.js -o dist --source-map"
   },
   "dependencies": {
     "@actions/cache": "^3.1.2",

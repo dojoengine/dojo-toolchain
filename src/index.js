@@ -2,7 +2,6 @@ const core = require("@actions/core");
 const toolCache = require("@actions/tool-cache");
 const path = require("path");
 
-const { restoreRPCCache } = require("./cache");
 const { getDownloadObject } = require("./utils");
 
 async function main() {
@@ -22,14 +21,6 @@ async function main() {
 
     // Expose the tool
     core.addPath(path.join(pathToCLI, download.binPath));
-
-    // Get cache input
-    const cache = core.getInput("cache");
-
-    if (cache) {
-      // Restore the RPC cache, if any.
-      restoreRPCCache();
-    }
   } catch (err) {
     core.setFailed(err);
   }

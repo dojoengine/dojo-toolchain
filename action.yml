@@ -6,13 +6,6 @@ branding:
   icon: "play-circle"
 
 inputs:
-  cache:
-    default: "true"
-    description: |
-      Whether to cache RPC responses or not.
-
-      Caching is activated by default.
-    required: false
   version:
     default: "nightly"
     description: |
@@ -25,5 +18,3 @@ inputs:
 runs:
   using: "node16"
   main: "dist/index.js"
-  post: "dist/save/index.js"
-  post-if: "github.event.inputs.cache && success()"
